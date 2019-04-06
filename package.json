@@ -1,0 +1,11 @@
+{
+    "name": "css_sort",
+    "version": "0.0.1",
+    "description": "A CSS source file sorter.",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc --outDir bin"
+    },
+    "author": "Ben Ellis",
+    "license": "MIT"
+}
