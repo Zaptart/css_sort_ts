@@ -16,13 +16,21 @@ export default class Utils {
 
     checkIfFile(...paths: string[]): boolean {
         if (paths.length >= 1) {
-            paths.forEach(path => {
-                if (!this.isFile(path)) {
-                    console.log(path + " is not a valid path.");
+            for (let i: number = 0; i < paths.length; ++i) {
+                try {
+                    if (this.isFile(paths[i])) {
+                        if (i == paths.length - 1) {
+                            return true;
+                        }
+                    } else {
+                        console.log(paths[i] + " is not a file.");
+                        return false;
+                    }
+                } catch (e) {
+                    console.log(paths[i] + " is not a file.");
                     return false;
                 }
-            });
-            return true;
+            }
         } else {
             return false;
         }
@@ -30,12 +38,21 @@ export default class Utils {
 
     checkIfDirectory(...paths: string[]): boolean {
         if (paths.length >= 1) {
-            paths.forEach(path => {
-                if (!this.isDirectory(path)) {
-                    console.log(path + " is not a valid path.");
+            for (let i: number = 0; i < paths.length; ++i) {
+                try {
+                    if (this.isDirectory(paths[i])) {
+                        if (i == paths.length - 1) {
+                            return true;
+                        }
+                    } else {
+                        console.log(paths[i] + " is not a directory.");
+                        return false;
+                    }
+                } catch (e) {
+                    console.log(paths[i] + " is not a directory.");
                     return false;
                 }
-            });
+            }
             return true;
         } else {
             return false;

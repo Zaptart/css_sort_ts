@@ -62,9 +62,9 @@ export class CLI {
         },
         async sort(util: Utils, key: string, ...args: string[]) {
             if (args.length >= 1) {
-                if (util.checkIfFile("", args)) {
+                if (util.checkIfFile(...args)) {
                     //arg contains file(s)
-                } else if (util.checkIfDirectory("", args)) {
+                } else if (util.checkIfDirectory(...args)) {
                     //args contains director(y/ies)
                 }
             } else {
@@ -73,9 +73,9 @@ export class CLI {
         },
         async sort_desc(util: Utils, key: string, ...args: string[]) {
             if (args.length >= 1) {
-                if (util.checkIfFile("", args)) {
+                if (util.checkIfFile(...args)) {
                     //arg contains file(s)
-                } else if (util.checkIfDirectory("", args)) {
+                } else if (util.checkIfDirectory(...args)) {
                     //args contains director(y/ies)
                 }
             } else {
